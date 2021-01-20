@@ -1,7 +1,7 @@
 {
   "name": "employee-directory-hw",
   "version": "0.1.0",
-  "homepage": "http://lain7891.github.io/react-employee-dir",
+  "homepage": "http://lain7891.github.io/react-employee-dir/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",

@@ -15,18 +15,6 @@ componentDidMount(){
     this.randomEmployee();
 };
 
-randomEmployee = () => {
-    axios.get("https://randomuser.me/api/").then(response => {
-        console.log(response.data.results);
-        this.setState({
-            employees: response.data.results,
-        })
-    }).catch((err) => {
-        console.log(err)
-    })
-   
-// API.getRandomEmployee().then(res => this.setState({employees: res.data})).catch(err => console.log(err))
-};
 
     render() {
         return (
