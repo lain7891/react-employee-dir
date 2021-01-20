@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
+import axios from "axios";
 // import InputGroup from 'react-bootstrap/InputGroup';
 // import Button from 'react-bootstrap/Button';
 
 class Search extends Component {
+
+    state= {employees: ["name", "location", "email", "dob", "phoneNumber"]};
+
+    componentDidMount(){
+        this.getEmployees();
+    };
+
+
+    getEmployees = () => {
+        axios.get("https://randomuser.me/api/").then((response)=>{
+            console.log(response.data)
+        })
+    }
+
     render() {
         return (
             <div className="container">
@@ -14,10 +29,11 @@ class Search extends Component {
                 <div className="row">
                     <div className="col">
                     <select className="form-select" aria-label="Default select example">
-  <option selected>Choose an Employee</option>
-  <option value="mary">Mary</option>
-  <option value="bob">Bob</option>
-  <option value="sam">Sam</option>         
+                    <option>Choose</option>
+                    {this.state.employees.map((employee, index)=>(
+                        <option value={employee} key={index}>{employee}</option>
+                    ))}
+       
 </select>
         
                  </div>
