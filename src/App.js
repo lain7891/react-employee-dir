@@ -1,14 +1,14 @@
 import React from "react";
 import Employee from "./components/Employee";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Search from "./components/Search";
 // import Footer from './components/Footer';
 // import Header from './components/Header';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <Route exact path="/" component={Search} />
       <Route exact path="/Search" component={Search} />
       <Route exact path="/Employee" component={Employee} />
