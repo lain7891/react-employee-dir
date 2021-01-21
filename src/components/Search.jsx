@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import axios from "axios";
+// import React, { Component } from 'react';
+// import axios from "axios";
 // import InputGroup from 'react-bootstrap/InputGroup';
 // import Button from 'react-bootstrap/Button';
 function Search({searchMethod}){

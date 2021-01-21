@@ -1,9 +1,8 @@
 import React from 'react';
 import Employee from './Employee';
+import API from '../utils/API';
 
-import Api from '../utils/API';
-
-export default class DataPH extends Component {
+export default class DataPH extends React.Component {
     state={
         order: 'descend'
     }
@@ -15,6 +14,22 @@ export default class DataPH extends Component {
         {name: 'DOB'}
     ]
 
+    componentDidMount() {
+       API.getRandomEmployee().then((results) => {
+console.log(results);
+       }
+       );
+    }
+
+    //   loadEmployee = () => {
+    //     API.getRandomEmployee()
+    //       .then(res =>
+    //         this.setState({
+    //           order: res.data
+    //         })
+    //       )
+    //       .catch(err => console.log(err));
+    //   };
     // create a method tat determines the order of the sort - provide two options
     // hint: conditionals
     sortMethod = header => {
