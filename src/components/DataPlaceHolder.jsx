@@ -7,7 +7,8 @@ import Search from "./Search"
 export default class DataPH extends React.Component {
     state={
         order: 'descend',
-        employees: []
+        employees: [],
+        filteredEmployees: []
     }
     headers = [
         {name: 'Name', width: "10%"},
@@ -36,6 +37,25 @@ this.setState({employees:results.data.results})
     //   };
     // create a method tat determines the order of the sort - provide two options
     // hint: conditionals
+
+    handleInputChange = (event) => {
+        // Getting the value and name of the input which triggered the change
+        const { name, value } = event.target;
+    
+        const filteredEmployees = this.state.employees.filter((employee) => {
+          return (
+            employee.name.first.includes(value) ||
+            employee.name.last.includes(value)
+          );
+        });
+    
+        // Updating the input's state
+        this.setState({
+          [name]: value,
+          filteredEmployees: filteredEmployees,
+        });
+      };
+
     sortMethod = header => {
         if(this.state.order === "descend"){
             this.setState({
@@ -56,6 +76,7 @@ this.setState({employees:results.data.results})
                
                 {/* hold your employee component - along  with the methods needed to render the desired layout */}
                 <Employee employees={this.state.employees}/>
+                <Search employees={this.state.employees}/>
             </div>
           </>
         )

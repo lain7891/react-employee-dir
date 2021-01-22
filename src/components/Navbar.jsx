@@ -5,10 +5,14 @@ const styles = {
         background: "lightBlue",
         fontFamily: "Comic Sans MS, Comic Sans, cursive",
         fontSize: "10%",
-        fontColor: "white",
-        textAlign: "center"
+        color: "blue",
+        position: "static"
 
+    },
+    h1:{
+        textAlign: "center"
     }
+  
 }
 
 const Navbar = () => {
