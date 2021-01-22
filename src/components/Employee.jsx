@@ -3,8 +3,9 @@ import React from 'react';
 const Employee = (props) => {
   return (
     <div>
-          <table class="table">
-  <thead>
+      
+          <table class="table">   
+  <thead> 
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -13,12 +14,28 @@ const Employee = (props) => {
     </tr>
   </thead>
   <tbody>
-    <tr>
+  {/* {this.props.results.map(results => {
+   <tr>
+   <th scope="row">1</th>
+   <td>{props.firstName}</td>
+   <td>{props.lastName}</td>
+   <td>{props.email}</td>
+ </tr>
+        
+})}; */}
+  {props.employees.map(employee => {
+    return (
+      <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
+      <td>{employee.name.first}</td>
+      <td>{employee.name.last}</td>
+      <td>{employee.email}</td>
+     </tr>
+    )
+
+  })}
+
+ 
     <tr>
       <th scope="row">2</th>
       <td>Jacob</td>

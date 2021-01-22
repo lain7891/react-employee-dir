@@ -2,14 +2,23 @@
 // import axios from "axios";
 // import InputGroup from 'react-bootstrap/InputGroup';
 // import Button from 'react-bootstrap/Button';
+
+const styles = {
+    form: {
+        paddingTop: 20,
+        margin: 30,
+        position: "center"
+    }
+}
 function Search({searchMethod}){
     return(
-        <div>
+        <div style={styles.form}>
             <form>
                 
-                <input
-                    onChange={e => searchMethod(e)}
-                ></input>
+                <input  onChange={e => searchMethod(e)}
+                >
+                    
+                </input>
             </form>
         </div>
     )

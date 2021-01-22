@@ -1,10 +1,13 @@
 import React from 'react';
 import Employee from './Employee';
 import API from '../utils/API';
+import Navbar from "./Navbar";
+import Search from "./Search"
 
 export default class DataPH extends React.Component {
     state={
-        order: 'descend'
+        order: 'descend',
+        employees: []
     }
     headers = [
         {name: 'Name', width: "10%"},
@@ -17,6 +20,7 @@ export default class DataPH extends React.Component {
     componentDidMount() {
        API.getRandomEmployee().then((results) => {
 console.log(results);
+this.setState({employees:results.data.results})
        }
        );
     }
@@ -47,10 +51,11 @@ console.log(results);
     render(){
         return(
           <>
-            // Nav Bar
+          
             <div>
+               
                 {/* hold your employee component - along  with the methods needed to render the desired layout */}
-                <Employee/>
+                <Employee employees={this.state.employees}/>
             </div>
           </>
         )
