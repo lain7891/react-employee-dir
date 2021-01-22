@@ -1,7 +1,8 @@
 import React from 'react';
 import DataPh from './components/DataPlaceHolder';
 import Search from "./components/Search";
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar";
+
 
 
 
@@ -10,7 +11,7 @@ state={
     name: ""
 }
 
-    searchMethod = (event)=> {
+searchMethod = (event)=> {
 console.log(event.target.value);
 this.setState({name:event.target.value})
     }
@@ -20,6 +21,7 @@ this.setState({name:event.target.value})
 <Navbar/>
             <Search searchMethod={this.searchMethod}/>
             <DataPh/>
+            
            
             </>
         )

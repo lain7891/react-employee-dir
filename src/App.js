@@ -1,9 +1,6 @@
 import React from "react";
-import Employee from "./components/Employee";
-
-import { HashRouter as Router, Route } from "react-router-dom";
 import Main from './main';
-import DataPlaceHolder from "./components/DataPlaceHolder"
+
 // import Footer from './components/Footer';
 // import Header from './components/Header';
 

@@ -1,33 +1,27 @@
 import React from 'react';
 
+
 const Employee = (props) => {
   return (
-    <div>
+    <>
+    
       
           <table class="table">   
   <thead> 
     <tr>
       <th scope="col">Image</th>
-      <th scope="col">First</th>
+      <th scope="col"><button onClick={props.handleButtonClickForFirstName}>First</button></th>
       <th scope="col">Last</th>
       <th scope="col">Email</th>
       <th scope="col">Cell</th>
     </tr>
   </thead>
   <tbody>
-  {/* {this.props.results.map(results => {
-   <tr>
-   <th scope="row">1</th>
-   <td>{props.firstName}</td>
-   <td>{props.lastName}</td>
-   <td>{props.email}</td>
- </tr>
-        
-})}; */}
-  {props.employees.map(employee => {
+
+  {props.filteredEmployees.map(employee => {
     return (
       <tr>
-      <th scope="row"></th>
+    
       <td><img
        src={employee.picture.thumbnail}
       /></td>
@@ -40,22 +34,12 @@ const Employee = (props) => {
 
   })}
 
- 
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+
   </tbody>
 </table>
         );
-    </div>
+    
+    </>
   );
 };
 

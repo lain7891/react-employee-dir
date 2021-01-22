@@ -1,26 +1,62 @@
-// import React, { Component } from 'react';
-// import axios from "axios";
-// import InputGroup from 'react-bootstrap/InputGroup';
-// import Button from 'react-bootstrap/Button';
+
+// import DataPh from "./DataPlaceHolder";
+// import React, { useContext } from "react";
+// import DataAreaContext from "../utils/DataAreaContext"
 
 const styles = {
     form: {
         paddingTop: 20,
         margin: 30,
-        position: "center"
+        float: "right",
+        marginTop: 10,
+        position: "relative",
+      
     }
 }
-function Search({searchMethod}){
+
+// const Search = () => {
+//     const searchMethod = useSearchMethod(DataPH);
+
+//     return (
+// <div className="search">
+//     <form className="form-line">
+//         <input
+//         className="form-control mr-sm-2"
+//         type="search"
+//         placeholder="Search"
+//         aria-labe="Search"
+//         onChange={e => searchMethod.handleInputChange(e)}
+//         />
+//          <button className="btn my-2 my-sm-0" type="submit">
+//         Search
+//     </button>
+//     </form>
+// </div>
+
+//     )
+// }
+function Search ({handleInputChange}){
+// const context = useContext(DataAreaContext)
+
+
     return(
+        <>
         <div style={styles.form}>
-            <form>
+            <form className="form-inline"> 
                 
-                <input  onChange={e => searchMethod(e)}
+                <input  
+                className="form-control mr-sm-2"
+                type="Search"
+                placeholder="Search"
+                aria-label="Search"
+                onChange={this.handleInputChange} 
+                style={styles.form}
                 >
-                    
+
                 </input>
             </form>
         </div>
+        </>
     )
 }
 

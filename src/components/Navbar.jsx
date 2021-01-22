@@ -20,7 +20,7 @@ const Navbar = () => {
      
         <nav className="navbar" style={styles.navbar}>
           <div className="container">
-            <span className="h1" >Employee Directory</span>
+            <span className="h1" style={styles.h1}>Employee Directory</span>
           </div>
         </nav>
     );
